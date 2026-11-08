@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Switchboard – Privacy Policy</title>
+<meta name="description" content="Privacy policy for Home Switchboard, a Windows app for controlling smart plugs, lights and power strips.">
+<style>
+  :root { --bg:#f5f6f8; --card:#ffffff; --text:#1c1f24; --muted:#687080; --accent:#1fa97a; --border:#dde1e6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#15171c; --card:#1f2229; --text:#eceef1; --muted:#9aa1ad; --accent:#36d39a; --border:#2b2f38; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font: 17px/1.6 "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 720px; margin: 48px auto; padding: 40px 44px; background: var(--card);
+         border: 1px solid var(--border); border-radius: 14px; }
+  header { display:flex; align-items:center; gap:14px; margin-bottom: 8px; }
+  .icon { width:44px; height:44px; border-radius:11px; background:var(--accent); display:grid; place-items:center; flex:none; }
+  h1 { font-size: 1.6rem; line-height:1.25; margin:0; }
+  .updated { color: var(--muted); margin: 0 0 28px; }
+  h2 { font-size: 1.15rem; margin: 32px 0 8px; }
+  ul { padding-left: 1.3em; margin: 8px 0; }
+  li { margin: 6px 0; }
+  p { margin: 8px 0; }
+  .lead { font-size: 1.05rem; }
+  footer { max-width:720px; margin: 0 auto 48px; padding: 0 44px; color: var(--muted); font-size: .9rem; }
+  @media (max-width: 760px) { main { margin: 0; border-radius: 0; border-left:0; border-right:0; padding: 28px 22px; } footer { padding: 0 22px; margin-top: 20px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="icon" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round">
+        <path d="M7.05 6.6a7 7 0 1 0 9.9 0"/><path d="M12 3v8"/>
+      </svg>
+    </div>
+    <h1>Home Switchboard – Privacy Policy</h1>
+  </header>
+  <p class="updated">Last updated: 8 November 2026</p>
+
+  <p class="lead">Home Switchboard keeps your keys on your own PC and sends nothing to its maker. It is a Windows app made by Ric Vanderwyk-Coyne that controls smart plugs, lights and power strips on the Tuya platform, including devices set up with the Smart Life app. This policy explains what the app stores, what it sends and how to remove it.</p>
+
+  <h2>What the app stores</h2>
+  <p>Everything the app keeps stays on your PC.</p>
+  <ul>
+    <li><strong>Your Tuya Access ID and Access Secret.</strong> They are encrypted with Windows' built-in data protection, so only your Windows account on that PC can read them.</li>
+    <li><strong>Your app settings:</strong> the order of your device cards, which devices you've hidden, the window size and position, how the app starts, and your colour scheme.</li>
+  </ul>
+
+  <h2>What the app sends, and to whom</h2>
+  <p>The app talks only to Tuya's cloud service, the same service the Smart Life app uses.</p>
+  <ul>
+    <li><strong>To Tuya:</strong> to sign in, it sends your Access ID and a signature made from your Access Secret. It then sends the commands you choose, such as switching a plug on. Tuya's own privacy policy covers that service.</li>
+    <li><strong>To Ric Vanderwyk-Coyne or anyone else:</strong> nothing. There are no adverts, analytics or tracking.</li>
+    <li><strong>Demo mode</strong> works entirely on your PC and doesn't connect to anything.</li>
+  </ul>
+
+  <h2>Removing your data</h2>
+  <ul>
+    <li><strong>Uninstall the app</strong> to remove its settings and keys. You can also reset it in Windows: Settings &gt; Apps &gt; Installed apps &gt; Home Switchboard &gt; Advanced options &gt; Reset.</li>
+    <li><strong>Delete or change the keys</strong> in your Tuya developer account to stop the app reaching your devices completely.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>For questions about this policy, use the support contact on Home Switchboard's Microsoft Store page.</p>
+</main>
+<footer>Home Switchboard is an independent app. It is not made by, affiliated with or endorsed by Tuya or the makers of the Smart Life app.</footer>
+</body>
+</html>
