@@ -62,6 +62,12 @@
                       border-radius:50%; background: var(--accent); color: var(--accent-ink); font-weight:700; display:grid; place-items:center; }
   .note { margin-top: 26px; background: rgba(240,180,41,.08); border:1px solid rgba(240,180,41,.35); border-radius: 12px; padding: 16px 20px; color: #f3d38a; }
 
+  .video { margin-top: 30px; position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background:#000; }
+  .video a, .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+  .video img { width:100%; height:100%; object-fit:cover; display:block; }
+  .video .vnote { position:absolute; left:0; right:0; bottom:0; padding:10px 16px; font-size:.85rem; color:var(--muted); background:linear-gradient(transparent, rgba(0,0,0,.75)); }
+  .video-cap { color: var(--muted); font-size: .92rem; margin-top: 10px; }
+
   .final { text-align:center; }
   .final p { color: var(--muted); }
   footer { color: var(--muted); font-size: .88rem; padding: 34px 0 48px; border-top: 1px solid var(--border); }
@@ -83,6 +89,7 @@
       <a href="#features">Features</a>
       <a href="#screens">Screenshots</a>
       <a href="#setup">Setup</a>
+      <a href="#video">Video</a>
       <a href="https://apps.microsoft.com/detail/9P0JZG9L50J2?cid=website-nav">Get it</a>
     </nav>
   </header>
@@ -144,6 +151,13 @@
       <li><strong>Link your Smart Life app</strong>Scan a QR code with the Smart Life app on your phone to connect your devices.</li>
       <li><strong>Paste your two keys</strong>Copy your Access ID and Secret into Home Switchboard, and your devices appear.</li>
     </ol>
+    <div class="video" id="video">
+      <a href="https://youtu.be/fE_zwZV4M1U" target="_blank" rel="noopener" aria-label="Play the setup video">
+        <img src="images/video-thumb.jpg" alt="Video: how to get your Tuya keys" loading="lazy" width="1280" height="720">
+        <span class="vnote">Click to play. The video loads from YouTube.</span>
+      </a>
+    </div>
+    <p class="video-cap">Watch the full setup, step by step (about 3 minutes).</p>
     <div class="note">Home Switchboard controls devices you've already added with the Smart Life app on your phone. It can't add new devices: set those up in the phone app first, then click Refresh.</div>
   </div>
 </section>
@@ -166,5 +180,16 @@
   </div>
 </footer>
 
+<script>
+document.querySelector('#video a').addEventListener('click', function (e) {
+  e.preventDefault();
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/fE_zwZV4M1U?autoplay=1&rel=0';
+  f.title = 'How to get your Tuya keys';
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  this.replaceWith(f);
+});
+</script>
 </body>
 </html>
