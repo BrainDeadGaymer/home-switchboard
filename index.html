@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Switchboard – control your Smart Life devices from Windows</title>
+<meta name="description" content="Switch your Smart Life plugs, lights and power strips on and off from your Windows PC. Tray menu, brightness and warmth controls, themes. Available on the Microsoft Store.">
+<meta property="og:title" content="Home Switchboard for Windows">
+<meta property="og:description" content="Control your Smart Life plugs, lights and power strips from your Windows PC.">
+<meta property="og:image" content="https://braindeadgaymer.github.io/home-switchboard/images/1-main-dark.jpg">
+<meta property="og:url" content="https://braindeadgaymer.github.io/home-switchboard/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<style>
+  :root { --bg:#0f1115; --panel:#181b21; --card:#1f2229; --border:#2b2f38; --text:#eceef1; --muted:#9aa1ad; --accent:#36d39a; --accent-ink:#06261b; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font: 17px/1.6 "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header.top { display:flex; align-items:center; justify-content:space-between; padding: 22px 0; }
+  .brand { display:flex; align-items:center; gap:12px; font-weight:600; font-size:1.1rem; color:var(--text); text-decoration:none; }
+  .brand img { width:34px; height:34px; }
+  nav a { color: var(--muted); text-decoration:none; margin-left: 22px; font-size: .95rem; }
+  nav a:hover { color: var(--text); }
+
+  .hero { display:grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items:center; padding: 40px 0 72px; }
+  .hero h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.12; margin: 0 0 18px; letter-spacing: -0.02em; }
+  .hero h1 span { color: var(--accent); }
+  .hero p.lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 30px; max-width: 30em; }
+  .cta { display:inline-flex; align-items:center; gap:12px; background:var(--accent); color:var(--accent-ink);
+         font-weight:700; text-decoration:none; padding: 15px 26px; border-radius: 12px; font-size: 1.05rem;
+         box-shadow: 0 8px 30px rgba(54,211,154,.25); transition: transform .15s, box-shadow .15s; }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(54,211,154,.35); }
+  .cta svg { width: 22px; height: 22px; }
+  .small { color: var(--muted); font-size: .9rem; margin-top: 14px; }
+  .shot { border-radius: 14px; border: 1px solid var(--border); width: 100%; height:auto; display:block;
+          box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+
+  section { padding: 64px 0; }
+  section.alt { background: var(--panel); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  h2 { font-size: 1.9rem; margin: 0 0 10px; letter-spacing:-0.01em; }
+  .sub { color: var(--muted); margin: 0 0 36px; }
+
+  .features { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .feature { background: var(--card); border:1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .feature h3 { margin: 0 0 6px; font-size: 1.08rem; }
+  .feature p { margin: 0; color: var(--muted); font-size: .97rem; }
+  .dot { width:34px; height:34px; border-radius:10px; background: rgba(54,211,154,.14); display:grid; place-items:center; margin-bottom: 12px; }
+  .dot svg { width:18px; height:18px; stroke: var(--accent); fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+
+  .gallery { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .gallery figure { margin:0; }
+  .gallery figcaption { color: var(--muted); font-size: .92rem; margin-top: 10px; }
+
+  .steps { counter-reset: s; list-style:none; padding:0; margin:0; display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+  .steps li { background: var(--card); border:1px solid var(--border); border-radius: 14px; padding: 22px 22px 22px 70px; position:relative; color: var(--muted); }
+  .steps li strong { color: var(--text); display:block; margin-bottom: 4px; }
+  .steps li::before { counter-increment: s; content: counter(s); position:absolute; left:22px; top:22px; width:32px; height:32px;
+                      border-radius:50%; background: var(--accent); color: var(--accent-ink); font-weight:700; display:grid; place-items:center; }
+  .note { margin-top: 26px; background: rgba(240,180,41,.08); border:1px solid rgba(240,180,41,.35); border-radius: 12px; padding: 16px 20px; color: #f3d38a; }
+
+  .final { text-align:center; }
+  .final p { color: var(--muted); }
+  footer { color: var(--muted); font-size: .88rem; padding: 34px 0 48px; border-top: 1px solid var(--border); }
+  footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 12px; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 10px; }
+    .features, .steps, .gallery { grid-template-columns: 1fr; }
+    nav { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><img src="images/icon.png" alt=""> Home Switchboard</a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#screens">Screenshots</a>
+      <a href="#setup">Setup</a>
+      <a href="https://apps.microsoft.com/detail/9P0JZG9L50J2?cid=website-nav">Get it</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Your smart home,<br><span>one click away.</span></h1>
+      <p class="lead">Switch your Smart Life plugs, lights and power strips on and off right from your Windows PC, without reaching for your phone.</p>
+      <a class="cta" href="https://apps.microsoft.com/detail/9P0JZG9L50J2?cid=website-hero">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download from the Microsoft Store
+      </a>
+      <p class="small">For Windows 10 and 11 &middot; Try it first with built-in demo devices</p>
+    </div>
+    <img class="shot" src="images/1-main-dark.jpg" alt="Home Switchboard showing smart plugs, lights and a power strip as cards" width="1366" height="768">
+  </div>
+</div>
+
+<section class="alt" id="features">
+  <div class="wrap">
+    <h2>Everything you need, nothing you don't</h2>
+    <p class="sub">A small, fast app (about 1 MB) that sits quietly in your system tray.</p>
+    <div class="features">
+      <div class="feature"><div class="dot"><svg viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M6.6 6.6a7 7 0 1 0 10.8 0"/></svg></div>
+        <h3>One-click on and off</h3><p>Right-click the tray icon to switch any device, with a tick showing what's on.</p></div>
+      <div class="feature"><div class="dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+        <h3>Brightness and warmth</h3><p>Sliders for your lights, plus colour and scene modes.</p></div>
+      <div class="feature"><div class="dot"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></div>
+        <h3>Every socket on a strip</h3><p>Control each socket and USB port on your power strips separately.</p></div>
+      <div class="feature"><div class="dot"><svg viewBox="0 0 24 24"><path d="M9 4h.01M15 4h.01M9 12h.01M15 12h.01M9 20h.01M15 20h.01"/></svg></div>
+        <h3>Your layout</h3><p>Drag cards into your own order, hide devices you don't use, and filter by name.</p></div>
+      <div class="feature"><div class="dot"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg></div>
+        <h3>Themes</h3><p>Dark, Midnight blue, Black or Light, with six accent colours.</p></div>
+      <div class="feature"><div class="dot"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Private by design</h3><p>Your keys are encrypted on your PC. No adverts, no tracking, nothing sent to us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <h2>See it in action</h2>
+    <p class="sub">Shown with sample devices.</p>
+    <div class="gallery">
+      <figure><img class="shot" src="images/2-main-light.jpg" alt="Light theme" loading="lazy" width="1366" height="768"><figcaption>Light theme with a blue accent</figcaption></figure>
+      <figure><img class="shot" src="images/3-setup-guide.jpg" alt="Built-in setup guide" loading="lazy" width="1366" height="768"><figcaption>Built-in, illustrated setup guide</figcaption></figure>
+      <figure><img class="shot" src="images/4-settings.jpg" alt="Settings" loading="lazy" width="1366" height="768"><figcaption>Start with Windows, themes and accent colours</figcaption></figure>
+      <figure><img class="shot" src="images/1-main-dark.jpg" alt="Dark theme" loading="lazy" width="1366" height="768"><figcaption>All your devices at a glance</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="setup">
+  <div class="wrap">
+    <h2>Set up in about 10 minutes</h2>
+    <p class="sub">The app walks you through every step with pictures.</p>
+    <ol class="steps">
+      <li><strong>Create a free Tuya developer account</strong>Tuya is the platform behind the Smart Life app. The account is free.</li>
+      <li><strong>Link your Smart Life app</strong>Scan a QR code with the Smart Life app on your phone to connect your devices.</li>
+      <li><strong>Paste your two keys</strong>Copy your Access ID and Secret into Home Switchboard, and your devices appear.</li>
+    </ol>
+    <div class="note">Home Switchboard controls devices you've already added with the Smart Life app on your phone. It can't add new devices: set those up in the phone app first, then click Refresh.</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Ready to take control?</h2>
+    <p>Get Home Switchboard from the Microsoft Store.</p>
+    <a class="cta" href="https://apps.microsoft.com/detail/9P0JZG9L50J2?cid=website-bottom">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      Download from the Microsoft Store
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Ric Vanderwyk-Coyne &middot; <a href="privacy.html">Privacy policy</a></span>
+    <span>Home Switchboard is an independent app, not made by or affiliated with Tuya or the makers of Smart Life. Smart Life and Tuya are trademarks of their respective owners.</span>
+  </div>
+</footer>
+
+</body>
+</html>
