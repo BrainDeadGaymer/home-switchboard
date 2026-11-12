@@ -152,12 +152,11 @@
       <li><strong>Paste your two keys</strong>Copy your Access ID and Secret into Home Switchboard, and your devices appear.</li>
     </ol>
     <div class="video" id="video">
-      <a href="https://youtu.be/fE_zwZV4M1U" target="_blank" rel="noopener" aria-label="Play the setup video">
-        <img src="images/video-thumb.jpg" alt="Video: how to get your Tuya keys" loading="lazy" width="1280" height="720">
-        <span class="vnote">Click to play. The video loads from YouTube.</span>
-      </a>
+      <iframe src="https://www.youtube-nocookie.com/embed/fE_zwZV4M1U?rel=0" title="How to get your Tuya keys"
+        allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
-    <p class="video-cap">Watch the full setup, step by step (about 3 minutes).</p>
+    <p class="video-cap">Watch the full setup, step by step (about 3 minutes). <a href="https://youtu.be/fE_zwZV4M1U" target="_blank" rel="noopener">Open on YouTube</a></p>
     <div class="note">Home Switchboard controls devices you've already added with the Smart Life app on your phone. It can't add new devices: set those up in the phone app first, then click Refresh.</div>
   </div>
 </section>
@@ -180,16 +179,5 @@
   </div>
 </footer>
 
-<script>
-document.querySelector('#video a').addEventListener('click', function (e) {
-  e.preventDefault();
-  var f = document.createElement('iframe');
-  f.src = 'https://www.youtube-nocookie.com/embed/fE_zwZV4M1U?autoplay=1&rel=0';
-  f.title = 'How to get your Tuya keys';
-  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-  f.allowFullscreen = true;
-  this.replaceWith(f);
-});
-</script>
 </body>
 </html>
